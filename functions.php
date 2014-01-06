@@ -1,5 +1,6 @@
 <?php
     register_nav_menus();
+    register_sidebar();
 
     //page index
     function pagination($query_string){   
@@ -91,6 +92,25 @@
             }
         }   
         echo $temp2;
+    }
+
+    function ajax_show_post(){
+        if( isset($_GET['action'])&& $_GET['action'] == 'ajax_show_post'){
+            $post_ID = $_GET['id'];
+            query_posts("p=$post_ID");
+            the_post();
+            require 'temp/content_templete.html';
+            comments_template();
+            die();
+        }else{
+            return;
+        }
+    }
+ 
+    add_action('init', 'ajax_show_post');
+
+    function get_right_sidebar(){
+        require 'temp/right_sidebar_templete.html';
     }
 ?>
 

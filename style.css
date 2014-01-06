@@ -24,18 +24,28 @@ a:focus {
 
 /* LAYOUT CSS */
 #layout {
-    padding-left: 25%; /* "left col (nav + list)" width */
+    padding-left: 15.5%; /* "left col (nav + list)" width */
     position: relative;
     min-height:100%;
+    padding-right:15.5%;
 }
 
 .sidebar {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 25%;
-    margin-left: -25%;
-    background: rgb(24, 33, 61);
+    width: 15.5%;
+    margin-left: -15.5%;
+    background: #52accc;
+    color: #fff;
+}
+
+.right_sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15.5%;
+    border-left: 1px solid #ccc;
     color: #fff;
 }
 
@@ -43,11 +53,11 @@ a:focus {
     margin: 2em 0;
     position: fixed;
     top: 10%;
-    width:25%;
+    width:15.5%;
 }
 
 .header hgroup{
-   margin-left:80px;
+   margin-left:30px;
 }
 
 .brand-title,
@@ -87,7 +97,7 @@ a:focus {
 .content-subhead {
     text-transform: uppercase;
     color: #aaa;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
     padding: 0.4em 0;
     font-size: 80%;
     font-weight: 500;
@@ -95,12 +105,14 @@ a:focus {
 }
 
 .content {
-    min-height:650px;
-    padding: 2em 3em 0;
+    min-height:750px;
+    padding-left:1.75em;
+    padding-top:2em;
 }
 
 .post {
     padding-bottom: 2em;
+    padding-right:10px;
 }
 .post-title {
     font-size: 2em;
@@ -207,7 +219,7 @@ a:focus {
     z-index: 999999;
     
     /* Specify the width of your pageslide here */
-    width: 260px;
+    width: 18.5%;
     padding: 1px;
     
     /* These styles are optional, and describe how the pageslide will look */
@@ -247,6 +259,13 @@ a:focus {
 
 #social {
     float:right;
+    margin-right:10px;
+}
+
+#social-2 {
+    border-bottom: 1px solid #ccc;
+    margin-top: 32px;
+    padding-bottom: 10px;
 }
 
 .pure-u-1-5 img {
@@ -258,7 +277,7 @@ a:focus {
 #leftbutton {
     margin-left: 20px;
     margin-top: 20px;
-    margin-right: 28px;
+    margin-right: 20px;
     margin-bottom: 20px;
 }
 
@@ -294,19 +313,19 @@ a:focus {
 
 #nag-menu {
    margin-top:20px;
-   background:rgb(24, 33, 61);
+   background:#52accc;
    border-width:0px;
    font-size:18px;
 }
 
 #nag-menu a {
-   padding-left:80px;
+   padding-left:30px;
    color:white;
 }
 
 #nag-menu a:hover {
    text-decoration:none;
-   background:#a3b745;
+   background:#0074a2;
 }
 
 .bubble-box {
@@ -327,13 +346,13 @@ a:focus {
    border-left: 20px solid #333;
    border-top: 20px solid #EEE;
    margin-top: 20px;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 
 .arrow-right {
    border-right: 20px solid #333;
    border-top: 20px solid #EEE;
-   margin-left: 30px;
+   margin-left: 20px;
 }
 
 .arrow-top {
@@ -403,4 +422,16 @@ a:focus {
 
 #site_info {
     padding-top:10px;
+}
+
+.right_siderbar_subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-left:8px;
+    margin-right:10px;
 }

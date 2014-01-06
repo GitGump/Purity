@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="pure-u-1">
-        <div class="content">
+        <div class="content" id="content">
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
                 <div class="pure-g-r" id='social'>

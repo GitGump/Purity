@@ -1,0 +1,23 @@
+                <!-- A single blog post -->
+                <section class="post" id="post-<?php the_ID(); ?>">
+                    <header class="post-header">
+                    	<div class="post-avatar">
+                    		<?php echo get_avatar( get_the_author_email(), 47); ?>
+                    	</div>
+
+                        <h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+
+                        <p class="post-meta">
+                            作者 <a class="post-author"><?php the_author() ?></a> 
+                            <?php
+                            get_post_meta_info(get_the_ID());
+                            echo "阅读次数&nbsp;".getPostViews(get_the_ID());
+                            ?>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <?php the_content('已经有'.getPostViews(get_the_ID()).'人阅读了余下的内容，点击阅读 &raquo;'); ?>
+                    </div>
+                </section>
+			<?php include (TEMPLATEPATH . "/searchform.php"); ?> 

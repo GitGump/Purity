@@ -1,27 +1,11 @@
 <?php get_header(); ?>
-<div class="pure-u-1">
-        <div class="content">
+<div class="pure-u-1" id="pure-u-1">
+        <div class="content" id="content">
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
-                <div class="pure-g-r" id='social'>
-                    <div class="pure-u-1-5">
-                        <a href='http://renren.com'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-facebook-outline.svg'></img></a>
-                    </div>
-                    <div class="pure-u-1-5">
-                        <a href='http://weibo.com/wuplus1992'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-twitter-outline.svg'></img></a>
-                    </div>
-                    <div class="pure-u-1-5">
-                        <a href='https://github.com/WuPlus'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-github-outline.svg'></img></a>
-                    </div>
-                    <div class="pure-u-1-5">
-                        <a href='#'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-googleplus-outline.svg'></img></a>
-                    </div>
-                    <div class="pure-u-1-5">
-                        <a href='#'><img src='<?php echo get_template_directory_uri(); ?>/icon/social-rss-outline.svg'></img></a>
-                    </div>
-                </div>
                 <h1 class="content-subhead">Recent Post</h1>
                 <!-- A single blog post -->
+                <div id="section">
                 <?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
                 <section class="post" id="post-<?php the_ID(); ?>">
@@ -45,8 +29,10 @@
                     </div>
                 </section>
             	<?php endwhile; ?>
+
+                <?php pagination($query_string); ?>
+                </div>
             </div>
-            <?php pagination($query_string); ?>
 			<?php else : ?>
 			<h2 class="center">Not Found</h2>
 			<p class="center">Sorry, but you are looking for something that isn'there.</p>
@@ -54,14 +40,17 @@
 			<?php endif; ?>
         </div>
         <?php get_footer(); ?>
-        <div id="content1">
-        <a href="#modal" class="second">菜单</a>
-        </div>
-        <div id="modal">
-            <?php get_sidebar(); ?>
-        </div>
+</div>
+<?php get_right_sidebar(); ?>  
+<div id="content1">
+    <a href="#modal" class="second">菜单</a>
+</div>
+<div id="modal">
+    <?php get_sidebar(); ?>
+</div>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.pageslide.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/purity.js"></script>
 <script>
         /* Slide to the left, and make it model (you'll have to call $.pageslide.close() to close) */
         $(".second").pageslide({ direction: "left", modal: true });
